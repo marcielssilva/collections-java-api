@@ -7,14 +7,19 @@ public class ContagemPalavras {
     //atributo
     private Map<String, Integer> palavras;
 
+    // CONSTRUTOR
     public ContagemPalavras() {
         this.palavras = new HashMap<>();
     }
 
+    // METODO adicionarPalavras
     public void adicionarPalavras(String linguagem, Integer contagem) {
         palavras.put(linguagem, contagem);
     }
 
+    // METODO removerPalavra
+    // if o hashMap nao estiver vazio
+    // e conter a palavra (string palavra) remove a palavra do hashMap
     public void removerPalavra(String palavra) {
         if (!palavras.isEmpty()) {
             palavras.remove(palavra);
@@ -23,6 +28,7 @@ public class ContagemPalavras {
         }
     }
 
+    //METODO exibirContagem
     public int exibirContagemPalavras() {
         int contagemTotal = 0;
         for (int contagem : palavras.values()) {
@@ -31,6 +37,7 @@ public class ContagemPalavras {
         return contagemTotal;
     }
 
+    // METODO encontrarPalavrasMaisFrequente
     public String encontrarPalavrasMaisFrequente() {
         String linguagemMaisFrequente = null;
         int maiorContagem = 0;
@@ -43,6 +50,7 @@ public class ContagemPalavras {
         return linguagemMaisFrequente;
     }
 
+    //METODO MAIN
     public static void main(String[] args) {
         ContagemPalavras contagemLinguagens = new ContagemPalavras();
 
